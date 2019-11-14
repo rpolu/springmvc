@@ -1,4 +1,4 @@
-package com.elegant;
+package com.elegant.model;
 
 public class LoginModel {
 

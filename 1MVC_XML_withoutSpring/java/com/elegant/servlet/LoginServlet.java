@@ -1,4 +1,4 @@
-package com.elegant;
+package com.elegant.servlet;
 
 import java.io.IOException;
 
@@ -7,11 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class LoginServlet extends HttpServlet {
-	public LoginServlet() {
-       System.out.println("****************");
-	}
+import com.elegant.model.LoginModel;
 
+public class LoginServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String userName = request.getParameter("username");
 		String password = request.getParameter("password");

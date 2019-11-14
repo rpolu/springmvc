@@ -1,4 +1,4 @@
-package com.elegant;
+package com.elegant.model;
 
 public class LoginModel {
 	private String userName;
@@ -22,7 +22,7 @@ public class LoginModel {
 
 	public boolean validateUser() {
 		// dao
-		return userName.equals(password);
+		return userName.equalsIgnoreCase(password);
 	}
 
 }
