@@ -18,15 +18,16 @@ import com.elegant.bank.service.AccountService;
 public class AccountServiceImpl implements AccountService {
 	@Autowired
 	private AccountDao accountDao;
-
+	@Transactional
 	public Account getAccountDetails(int accountNumber) {
 		return accountDao.getAccountDetails(accountNumber);
 	}
-
+	@Transactional
 	public void createAccount(Account account) {
 		accountDao.createAccount(account);
 	}
 
+	@Transactional
 	@Override
 	public List<AccountModel> getAccounts() {
 		List<Account> listEnt = accountDao.getAccounts();

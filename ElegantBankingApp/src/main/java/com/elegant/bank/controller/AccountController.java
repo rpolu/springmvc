@@ -1,4 +1,4 @@
-package com.elegant.bank.account;
+package com.elegant.bank.controller;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
@@ -76,6 +76,15 @@ public class AccountController {
 		modelAndView.setViewName("manageaccounts");
 		List<AccountModel> models = accountService.getAccounts();
 		modelAndView.addObject("accList", models);
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = "update/{accnum}", method = RequestMethod.GET)
+	public ModelAndView updateAccount(@PathVariable("accnum") String accountNum) {
+		ModelAndView modelAndView = new ModelAndView();
+		Account account = accountService.getAccountDetails(Integer.parseInt(accountNum));
+		modelAndView.addObject("accoungform", account);
+		modelAndView.setViewName("accouncreateInput");
 		return modelAndView;
 	}
 

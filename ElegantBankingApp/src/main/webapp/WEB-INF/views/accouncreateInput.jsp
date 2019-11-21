@@ -5,6 +5,7 @@
 <form:form commandName="accoungform"
 	action="${pageContext.request.contextPath}/account/saveAccount">
 	<table>
+		<form:hidden path="accountNumber" />
 		<tr>
 			<th>Name :</th>
 			<td><form:input path="accountHolderName" /></td>
