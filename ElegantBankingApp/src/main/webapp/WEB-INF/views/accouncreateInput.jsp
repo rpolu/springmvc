@@ -2,31 +2,28 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	<form:form commandName="accoungform" action="${pageContext.request.contextPath}/account/saveAccount">
-		<p>
-			Account HolderName :
-			<form:input path="accountHolderName" />
-		<p>
-			Balance :
-			<form:input path="balance" />
-		<p>
+<form:form commandName="accoungform"
+	action="${pageContext.request.contextPath}/account/saveAccount">
+	<table>
+		<tr>
+			<th>Name :</th>
+			<td><form:input path="accountHolderName" /></td>
+		</tr>
+		<tr>
+			<th>Balance :</th>
+			<td><form:input path="balance" /></td>
+		</tr>
+		<tr>
 
-			Email :
-			<form:input path="email" />
-		<p>
-
-			Phone :
-			<form:input path="phone" />
-		<p>
-			<input type="submit" value="Create Account">
-	</form:form>
-
-</body>
-</html>
+			<th>Email :</th>
+			<td><form:input path="email" /></td>
+		</tr>
+		<tr>
+			<th>Phone :</th>
+			<td><form:input path="phone" /></td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="submit" value="Create Account"></td>
+		</tr>
+	</table>
+</form:form>

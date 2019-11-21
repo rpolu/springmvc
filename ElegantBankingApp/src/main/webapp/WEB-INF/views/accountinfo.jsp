@@ -1,20 +1,24 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body bgcolor="wheat">
-
-${acc.accountNumber }<p>
-${acc.accountHolderName }<p>
-${acc.balance }<p>
-${acc.email }<p>
-${acc.phone }<p>
-
-
-</body>
-</html>
+<div>
+	<table>
+		<tr>
+			<th><label for="name">Acc Number</label></th>
+			<td>${acc.accountNumber}</td>
+		</tr>
+		<tr>
+			<th><label for="name">Holder Name</label></th>
+			<td>${acc.accountHolderName}</td>
+		</tr>
+		<tr>
+			<th><label for="name">Balance</label></th>
+			<td>${acc.balance}</td>
+		</tr>
+		<tr>
+			<th><label for="name">Email</label></th>
+			<td>${acc.email}</td>
+		</tr>
+		<tr>
+			<th><label for="name">Phone Number</label></th>
+			<td>${acc.phone}</td>
+		</tr>
+	</table>
+</div>

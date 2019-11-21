@@ -1,3 +1,3 @@
-<div>
-	<h1>Elegant Banking </h1>
+<div class="header">
+	<h3>Elegant Banking</h3>
 </div>

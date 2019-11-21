@@ -1,11 +1,13 @@
 package com.elegant.bank.account;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 
 import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,7 +16,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.elegant.bank.entity.Account;
 import com.elegant.bank.model.AccountModel;
 import com.elegant.bank.service.AccountService;
-import com.mchange.v2.beans.BeansUtils;
 
 @Controller
 @RequestMapping("/account")
@@ -56,6 +57,25 @@ public class AccountController {
 		modelAndView.setViewName("accounDisplay");
 		Account account = accountService.getAccountDetails(Integer.parseInt(accountNum));
 		modelAndView.addObject("acc", account);
+		return modelAndView;
+	}
+
+	@RequestMapping(value = "getallaccounts", method = RequestMethod.GET)
+	public ModelAndView manageAccounts() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("manageaccounts");
+		List<AccountModel> models = accountService.getAccounts();
+		modelAndView.addObject("accList", models);
+		return modelAndView;
+	}
+
+	@RequestMapping(value = "delete/{accnum}", method = RequestMethod.GET)
+	public ModelAndView deleteAccount(@PathVariable("accnum") String accountNum) {
+		accountService.deleteAccount(Integer.parseInt(accountNum));
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("manageaccounts");
+		List<AccountModel> models = accountService.getAccounts();
+		modelAndView.addObject("accList", models);
 		return modelAndView;
 	}
 

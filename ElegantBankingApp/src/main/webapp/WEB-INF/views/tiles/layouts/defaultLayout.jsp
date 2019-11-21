@@ -1,161 +1,145 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
-"http://www.w3.org/TR/html4/loose.dtd">
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Elegant Banking</title>
+<script type="text/javascript"
+	src="<c:url value="/resources/js/menu.js" />"></script>
 <style type="text/css">
 body {
-	background: #E0E0E0;
+	font-family: Arial, Verdana, sans-serif;
+}
+#table-2 {
+	border: 1px solid #e3e3e3;
+	background-color: #f2f2f2;
+        width: 100%;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+}
+#table-2 td, #table-2 th {
+	padding: 5px;
 	color: #333;
-	font: 11px verdana, sans-serif;
-	padding: 0px 20px;
 }
-
-#header {
-	background: none repeat scroll 0 0 #549DC1;
-	opacity: 0.5;
-	text-align: center;
-	vertical-align: middle;
-	padding: 20px;
+#table-2 thead {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	padding: .2em 0 .2em .5em;
+	text-align: left;
+	color: #4B4B4B;
+	background-color: #C8C8C8;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#e3e3e3), color-stop(.6,#B3B3B3));
+	background-image: -moz-linear-gradient(top, #D6D6D6, #B0B0B0, #B3B3B3 90%);
+	border-bottom: solid 1px #999;
 }
-
-#menu {
-	height: 26px;
-	list-style-type: none;
-	margin: 0;
-	padding: 0px;
-	position: relative;
-}
-
-#menu li {
-	float: left;
-	margin: 0;
-	padding: 0;
-	width: 33.33%;
-}
-
-#menu a {
-	background: none repeat scroll 0 0 #B76EC4;
-	color: #4A0955;
-	position: relative;
-	display: block;
-	font-size: 10px;
-	height: 24px;
-	line-height: 24px;
-	margin: 1px;
-	text-align: center;
-	text-decoration: none;
-	text-transform: uppercase;
-}
-
-#menu a.first {
-	margin-left: 0;
-}
-
-#menu a.last {
-	margin-right: 0;
-}
-
-#menu a:hover {
-	background: none repeat scroll 0 0 #4A0955;
-	color: #B76EC4;
-}
-
-#menu a .square {
-	background: none repeat scroll 0 0 #7F238F;
-	display: block;
-	height: 8px;
-	left: 8px;
-	position: absolute;
-	top: 5px;
-	width: 8px;
-}
-
-h2 {
-	font-size: 18px;
-	font-weight: normal;
-	color: #C1D431;
-}
-
-#main {
-	background-color: #FFFFFF;
-	padding: 10px;
-}
-
-#loginForm {
-	border: solid 2px #b7ddf2;
-	background: #ebf4fb;
-	padding: 20px;
-	width: 320px;
-	margin: 0 auto;
-}
-
-#loginForm label {
+#table-2 th {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 17px;
+	line-height: 20px;
+	font-style: normal;
 	font-weight: bold;
-	text-align: right;
-	width: 100px;
-	float: left;
-}
-
-#loginForm input {
-	font-size: 12px;
-	padding: 4px 2px;
-	border: solid 1px #aacfe4;
-	margin: 2px 0 20px 10px;
-	float: left;
-}
-
-#loginForm input.text {
-	width: 200px;
-}
-
-#loginForm button {
-	clear: both;
-	margin-left: 150px;
-	width: 125px;
-	height: 31px;
-	background: #666666 url(img/button.png) no-repeat;
 	text-align: center;
-	line-height: 31px;
-	color: #FFFFFF;
-	font-size: 11px;
-	font-weight: bold;
+	text-shadow: white 1px 1px 1px;
 }
-
-#footer {
-	margin: 50px 0 5px;
-	padding: 5px 0;
-	text-align: center;
-	font-weight: bold;
-	text-transform: uppercase;
-	background: none repeat scroll 0 0 #B76EC4;
-	color: #4A0955;
-	border-color: #7F238F;
-}
-
-.error {
-	color: #FF0000;
-	text-align: center;
-	font-weight: bold;
-	text-transform: uppercase;
+#table-2 td {
+	line-height: 20px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 14px;
+	border-bottom: 1px solid #fff;
+	border-top: 1px solid #fff;
+}
+#table-2 td:hover {
+	background-color: #fff;
+}
+.contentPane {
+	text-align: center;
+}
+.header,.footer,.leftPane,.rightPane {
+	border: 1px solid gray;
+	border-radius: 10px;
+}
+.header,.main,.footer {
+	width: 960px;
+	color: black;
+	margin: 0px auto;
+	clear: both;
+}
+.header {
+	color: #0080FF;
+}
+.footer, .header, .rightPane {
+	text-align:center;
+}
+.leftPane,.rightPane {
+	float: left;
+	margin: 10px;
+	height: 400px;
+}
+.leftPane {
+	width: 250px;
+}
+.rightPane {
+	width: 665px;
+}
+.contentPane {
+	padding: 20px;
+}
+.leftMenu {
+	list-style: none;
+	padding: 0;
+	margin: 10px;
+}
+table thead {
+	background: #000;
+	color: #fff;
+}
+table tbody {
+	background: transparent;
+	color: #000;
+	
+}
+table tbody tr:nth-child(even) {
+	background: #EBEBEB;
+}
+table tbody tr:nth-child(odd) {
+	background: #D6D6D6;
+}
+table tbody tr:hover {
+	background: #FFE9A0;
+}
+#menu0 dt {
+	cursor: pointer;
+}
+.error {
+	color: #ff0000;
+}
+.errorblock {
+	color: #000;
+	background-color: #ffEEEE;
+	border: 3px solid #ff0000;
+	padding: 8px;
+	margin: 16px;
 }
 </style>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title><tiles:insertAttribute name="title" ignore="true" /></title>
 </head>
-<body>
-	<div id="header">
-		<tiles:insertAttribute name="header" />
+<body bgcolor="#E5E4E2">
+	<tiles:insertAttribute name="header" />
+	<div class="main">
+	<div class="leftPane">
+			<div class="contentPane">
+		<tiles:insertAttribute name="menu" />
+		</div>
+		</div>
+		<div class="rightPane">
+			<div class="contentPane">
+				<tiles:insertAttribute name="body" />
+			</div>
+		</div>
 	</div>
-	<div id="menu">
-		<tiles:insertAttribute name="menu" ignore="true" />
-	</div>
-	<div id="main">
-		<tiles:insertAttribute name="body" />
-	</div>
-	<div id="footer">
-		<tiles:insertAttribute name="footer" />
-	</div>
+	<tiles:insertAttribute name="footer" />
+
 </body>
 </html>

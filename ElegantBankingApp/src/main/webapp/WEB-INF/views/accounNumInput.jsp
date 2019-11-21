@@ -1,21 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	<p>
-	<p>
-	<p>
-	<form action="getDetails">
-		Account Num:<input type="text" name="accountnum">
-		<p>
-
-			<input type="submit" value="Get Account Deatails">
-	</form>
-
-</body>
-</html>
+<form action="getDetails">
+	<table>
+		<tr>
+			<th>Account Num:</th>
+			<th><input type="text" name="accountnum"></th>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="submit"
+				value="Get Account Deatails"></td>
+		</tr>
+	</table>
+</form>

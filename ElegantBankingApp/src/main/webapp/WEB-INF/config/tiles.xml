@@ -40,5 +40,12 @@
 		<put-attribute name="body"
 			value="/WEB-INF/views/accouncreateInput.jsp" />
 	</definition>
+	
+	<definition name="manageaccounts"
+		extends="base-definition">
+		<put-attribute name="title" value="Create Account" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/manageaccounts.jsp" />
+	</definition>
 
 </tiles-definitions>
