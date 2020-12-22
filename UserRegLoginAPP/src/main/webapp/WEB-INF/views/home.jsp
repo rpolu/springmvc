@@ -12,10 +12,13 @@
 			<tr>
 				<td>User Name</td>
 				<td><form:input path="userName"></form:input></td>
+				<td><form:errors path="userName"></form:errors></td>
+
 			</tr>
 			<tr>
 				<td>Password</td>
-				<td><form:password path="password"></form:input></td>
+				<td><form:password path="password"></form:password></td>
+				<td><form:errors path="password"></form:errors></td>
 			</tr>
 			<tr>
 				<td colspan="1"><a href="./userReg">Sing UP</a></td>
