@@ -3,6 +3,11 @@
 <%@ page session="false"%>
 <html>
 <head>
+<style type="text/css">
+.error {
+	color: red;
+}
+</style>
 <title>Home</title>
 </head>
 <body>
@@ -12,13 +17,13 @@
 			<tr>
 				<td>User Name</td>
 				<td><form:input path="userName"></form:input></td>
-				<td><form:errors path="userName"></form:errors></td>
+				<td><form:errors path="userName" cssClass="error"></form:errors></td>
 
 			</tr>
 			<tr>
 				<td>Password</td>
 				<td><form:password path="password"></form:password></td>
-				<td><form:errors path="password"></form:errors></td>
+				<td><form:errors path="password" cssClass="error"></form:errors></td>
 			</tr>
 			<tr>
 				<td colspan="1"><a href="./userReg">Sing UP</a></td>

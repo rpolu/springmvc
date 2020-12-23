@@ -44,7 +44,7 @@ public class HomeController {
 			return new ModelAndView("home");
 		}
 
-		boolean flag = userServie.loginUser(userName, password);
+		boolean flag = userServie.validateUser(userName, password);
 		if (flag)
 			return new ModelAndView("loginSuccess");
 		else
@@ -80,7 +80,7 @@ public class HomeController {
 		if (bindingResult.hasErrors()) {
 			return new ModelAndView("userSignUp");
 		}
-
+		userServie.saveUser(userModel);
 		return new ModelAndView("home", "userCommand", new UserModel());
 	}
 
