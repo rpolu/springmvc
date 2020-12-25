@@ -12,7 +12,7 @@ import com.user.model.UserModel;
 import com.user.service.UserServie;
 
 @Controller
-public class HomeController {
+public class UserController {
 
 	@Autowired
 	private UserServie userServie;
