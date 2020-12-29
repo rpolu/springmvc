@@ -33,11 +33,11 @@ public class UserController {
 		String password = userModel.getPassword();
 
 		if (userName == null || userName.trim().equals("")) {
-			bindingResult.rejectValue("userName", "", "User Name is Required");
+			bindingResult.rejectValue("userName", "username.empty", "User Name is Required");
 		}
 
 		if (password == null || password.trim().equals("")) {
-			bindingResult.rejectValue("password", "", "Password id required");
+			bindingResult.rejectValue("password", "password.empty", "Password is required");
 		}
 
 		if (bindingResult.hasErrors()) {
