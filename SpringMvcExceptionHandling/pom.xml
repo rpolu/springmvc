@@ -9,7 +9,7 @@
 	<name>SpringMvcExceptionHandling Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
-		<spring-framework.version>4.0.0.RELEASE</spring-framework.version>
+		<spring-framework.version>5.3.19</spring-framework.version>
 		<hibernate.version>3.6.0.Final</hibernate.version>
 	</properties>
 	<dependencies>
